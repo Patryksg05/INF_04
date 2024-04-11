@@ -1,0 +1,139 @@
+﻿<Window x:Class="desktop_app.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:desktop_app"
+        mc:Ignorable="d"
+        Title="Wprowadzenie danych do paszportu. Wykonał: 00000000" 
+        Height="400" 
+        Width="800"
+        Background="CadetBlue">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel 
+            Orientation="Vertical"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+            
+
+            <StackPanel Orientation="Horizontal" Margin="0 0 0 20">
+                <TextBlock
+                    Text="Numer"
+                    FontSize="14"/>
+                <TextBox
+                    x:Name="numberEditText"
+                    Width="230"
+                    Margin="50 0 0 0"
+                    Background="Azure" 
+                    TextChanged="numberEditText_TextChanged"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" Margin="0 0 0 20">
+                <TextBlock
+                    Text="Imię"
+                    FontSize="14"/>
+                <TextBox
+                    x:Name="nameEditText"
+                    Width="230"
+                    Margin="66 0 0 0"
+                    Background="Azure"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0 0 0 20">
+                <TextBlock
+                    Text="Nazwisko"
+                    FontSize="14"/>
+                <TextBox
+                    x:Name="surnameEditText"
+                    Width="230"
+                    Margin="33 0 0 0"
+                    Background="Azure"/>
+            </StackPanel>
+
+        </StackPanel>
+
+        <GroupBox 
+            Grid.Row="1" 
+            Header="Kolor oczu"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Width="330"
+            FontSize="14">
+
+            <StackPanel Orientation="Vertical" Margin="15">
+
+                <RadioButton
+                    x:Name="blueRadioBtn"
+                    Content="niebieskie" 
+                    GroupName=""
+                    Margin="5"
+                    FontSize="14"/>
+
+                <RadioButton
+                    x:Name="greenRadioBtn"
+                    Content="zielone"
+                    Margin="5"
+                    FontSize="14"/>
+
+                <RadioButton
+                    x:Name="darkRadioBtn"
+                    Content="piwne"
+                    Margin="5"
+                    IsChecked="True"
+                    FontSize="14"/>
+
+            </StackPanel>
+            
+        </GroupBox>
+
+        <StackPanel 
+            Orientation="Vertical" 
+            Grid.Column="1"
+            Grid.RowSpan="2">
+
+            <StackPanel 
+                Orientation="Horizontal"
+                Height="305" 
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center">
+
+                <Image
+                    x:Name="personImage"
+                    Source="../../materialy/000-zdjecie.jpg"
+                    Height="180"/>
+
+                <Image
+                    x:Name="touchImage"
+                    Source="../../materialy/000-odcisk.jpg"
+                    Margin="30 0 0 0"
+                    Height="180"/>
+
+            </StackPanel>
+
+            <StackPanel
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center">
+
+                <Button
+                    x:Name="btnClickMethod"
+                    Content="OK"
+                    Width="230"
+                    Height="40"
+                    Background="Azure" 
+                    Click="btnClickMethod_Click"/>
+
+            </StackPanel>
+
+        </StackPanel>
+        
+    </Grid>
+</Window>
